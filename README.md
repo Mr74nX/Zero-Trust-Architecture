@@ -50,7 +50,7 @@ No user, device, or application is trusted by default — regardless of whether 
                        Policy |     | Trust
                        Engine |     | Algorithm
                               v     |
-+--------+   Request   +---------------------------+   Grant/Deny     +-----------+
++--------+   Request    +---------------------------+   Grant/Deny     +-----------+
 | Subject | ----------> |   Policy Enforcement Point | -------------> | Resource  |
 | (User/  |             |          (PEP)             |                | (App/DB/  |
 | Device) | <---------- +---------------------------+ <-------------  | Service)  |

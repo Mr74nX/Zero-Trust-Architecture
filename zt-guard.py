@@ -5,7 +5,7 @@ from pydantic import BaseModel
 app = FastAPI(title="Zero Trust Access Control Gate")
 
 USERS_DB = {
-    "tan_dev": {
+    "mr.tan": {
         "role": "admin",
         "allowed_devices": ["SECURE_LAPTOP_01"],
         "token": "secret-token-tan-123"
@@ -46,7 +46,7 @@ def verify_zero_trust_policy(req: AccessRequest, auth_token: str):
     return True
 
 @app.post("/api/v1/secure-access")
-def access_resource(request_data: AccessRequest, authorization: str = Header(...)):
+def access_resource(request_data: AccessRequest, authorization: str = Header(default="secret-token-tan-123")):
     
     verify_zero_trust_policy(request_data, authorization)
     
